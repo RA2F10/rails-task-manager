@@ -1,0 +1,34 @@
+<h1>My Tasks</h1>
+
+<ul>
+  <% @tasks.each do |task| %>
+    <%= link_to task.title, task_path(task) %><br>
+    <%= link_to “Edit”, edit_task_path(task) %><br>
+    <%= link_to “Delete”, task_path(task), method: :delete %><br>
+  <% end %>
+<%= link_to “Add a task”, tasks_new_path %>
+</ul>
+
+<!-- <h1>My Tasks</h1>
+
+
+<form class="new_restaurant" id="task1" action="/tasks" accept-charset="UTF-8" method="index">
+  <input type="checkbox" name="authenticity_token" value="fUrBymmVzFG49YTQE9xKfohttEtW7eHnui2WT6KWpRXT6g9dz73lhZ7bRdHH+RuV/TFoB23OG5l1eo731o8l6g==">
+  <label for="task1">Laundry</label>
+</br>
+  <input type="checkbox" name="restaurant[name]" id="task2">
+  <label for="task2">Studying</label>
+</form>
+
+  <ul>
+    <% @tasks.each do |task| %>
+      <% if task.completed %>
+          <%= image_tag "fullcheckbox.png", alt: "completed" %>
+      <% else %>
+          <%= image_tag "emptycheckbox.png", alt: "empty" %>
+      <% end %>
+      <li><%= link_to task.title, task_path(task) %></li>
+    <% end %>
+    <%= link_to "Create a task", tasks_new_path %>
+  </ul>
+ -->
